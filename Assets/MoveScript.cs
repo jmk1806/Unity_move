@@ -4,32 +4,18 @@ using UnityEngine;
 
 public class MoveScript : MonoBehaviour
 {
-    public int speed = 1;
+    public GameObject player;
+    private Vector3 distance;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        distance = transform.position - player.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(Vector3.left * speed);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(Vector3.right * speed);
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Translate(Vector3.forward * speed);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(Vector3.back * speed);
-        }
-
+        transform.position = player.transform.position + distance;
     }
 }
