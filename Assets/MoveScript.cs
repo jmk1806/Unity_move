@@ -6,7 +6,7 @@ public class MoveScript : MonoBehaviour
 {
     public GameObject player;
     private Vector3 distance;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +17,6 @@ public class MoveScript : MonoBehaviour
     void Update()
     {
         transform.position = player.transform.position + distance;
+        
     }
 }
